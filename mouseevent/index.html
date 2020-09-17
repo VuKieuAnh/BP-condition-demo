@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Event</title>
+</head>
+<style>
+    #demohover {
+        color: blue;
+    }
+
+    #demohover:hover {
+        color: red;
+    }
+</style>
+<body onload="docReady()">
+
+<img id="avatar" src="IMG_2524.JPG" width="100" style="position:absolute;left:0; top:0;">
+<!--<input id="height" placeholder="Mời bạn nhập chiều cao" value="1.0" onchange="changeHeight()"/>-->
+<!--<button onclick="console.log('Click')">Click me</button>-->
+<!--<button id="demohover">Hover me</button>-->
+<!--<script>-->
+<!--    function changeHeight() {-->
+<!--        console.log("Thay đổi chiều cao")-->
+<!--    }-->
+<!--</script>-->
+
+<script>
+    function nhanPhimTren() {
+        console.log("Trên");
+    }
+    function nhanPhimDuoi() {
+        console.log("Duoi");
+    }
+    function nhanPhimTrai() {
+        console.log("Trai");
+    }
+    function nhanPhimPhai() {
+        // console.log("Phai");
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.left;
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function nhanphim(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                nhanPhimTrai();
+                break;
+            case 39:
+                nhanPhimPhai();
+                break;
+            case 38:
+                nhanPhimTren();
+                break;
+            case 40:
+                nhanPhimDuoi();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', nhanphim);
+    }
+</script>
+</body>
+</html>
